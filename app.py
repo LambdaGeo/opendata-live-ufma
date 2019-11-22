@@ -4,11 +4,11 @@ from flask_cors import CORS
 
 # live API
 from api.restplus import api as api
-#from api.unidade.endpoints import ns as unidade_namespace
-#from api.subunidade.endpoints import ns as subunidade_namespace
+from api.unidade.endpoints import ns as unidade_namespace
+from api.subunidade.endpoints import ns as subunidade_namespace
 from api.docente.endpoints import ns as docente_namespace
-#from api.curso.endpoints import ns as curso_namespace
-#from api.biblioteca.endpoints import ns as biblioteca_namespace
+from api.curso.endpoints import ns as curso_namespace
+from api.biblioteca.endpoints import ns as biblioteca_namespace
 
 
 import settings

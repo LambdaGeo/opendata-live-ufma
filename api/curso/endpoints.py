@@ -2,7 +2,7 @@
 from flask_restplus import Resource
 from api.restplus import api as liveapi
 from api.unidade.serializer import unidades_field
-from api.scrapper.sigaa  import curso
+from ufma_scrapper import curso
 
 
 ns = liveapi.namespace('curso', description='Operations related to "curso"')

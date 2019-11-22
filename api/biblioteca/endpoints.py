@@ -2,7 +2,7 @@
 from flask_restplus import Resource, reqparse, Api
 from api.restplus import api as liveapi
 from api.unidade.serializer import unidades_field
-from api.scrapper  import acervobiblioteca
+from ufma_scrapper  import acervobiblioteca
 from flask import request
 
 

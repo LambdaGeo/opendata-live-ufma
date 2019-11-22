@@ -2,7 +2,7 @@
 from flask_restplus import Resource
 from api.restplus import api as api
 from api.unidade.serializer import unidades_field
-from  api.scrapper.sigaa  import subunidade
+from  ufma_scrapper  import subunidade
 
 ns = api.namespace('subunidade', description='Operations related to "subunidade"')
 
