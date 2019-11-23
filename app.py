@@ -1,16 +1,11 @@
 from flask import Flask, Blueprint, render_template
 from flask_cors import CORS
-
-
-# live API
-from api.restplus import api as api
-from api.unidade.endpoints import ns as unidade_namespace
-from api.subunidade.endpoints import ns as subunidade_namespace
-from api.docente.endpoints import ns as docente_namespace
-from api.curso.endpoints import ns as curso_namespace
-from api.biblioteca.endpoints import ns as biblioteca_namespace
-
-
+from restplus import api as api
+from endpoints.unidade import ns as unidade_namespace
+from endpoints.subunidade import ns as subunidade_namespace
+from endpoints.docente import ns as docente_namespace
+from endpoints.curso import ns as curso_namespace
+from endpoints.biblioteca import ns as biblioteca_namespace
 import settings
 
 
@@ -28,15 +23,20 @@ blueprint = Blueprint('api', __name__, url_prefix='/api/v01')
 api.init_app(blueprint)
 
 
+api.add_namespace(unidade_namespace)
+api.add_namespace(subunidade_namespace)
+api.add_namespace(docente_namespace)
+api.add_namespace(curso_namespace)
+api.add_namespace(biblioteca_namespace)
+
 
 app = Flask(__name__)
 configure_app(app)
 
+
 app.register_blueprint(blueprint)
 
 
-# Endpoint Home
-# Endpoint Home
 @app.route('/')
 def index():
     return render_template('index.html')

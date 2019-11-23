@@ -1,10 +1,9 @@
-
 from flask_restplus import Resource
-from api.restplus import api as api
-from api.unidade.serializer import unidades_field
-from  ufma_scrapper  import subunidade
+from restplus import api as api
+from ufma_scrapper import subunidade
 
 ns = api.namespace('subunidade', description='Operations related to "subunidade"')
+
 
 @ns.route('/')
 class SubUnidade (Resource):
@@ -17,18 +16,20 @@ class SubUnidade (Resource):
     def get(self, codigo):
         return subunidade.get_subunidade(codigo)
 
+
 @ns.route('/<string:codigo>/disciplina')
 class Disciplinas(Resource):
     def get(self, codigo):
         return subunidade.get_disciplinas(codigo)
+
 
 @ns.route('/<string:codigo>/docente')
 class Docentes(Resource):
     def get(self, codigo):
         return subunidade.get_docentes(codigo)
 
-'''
 
+'''
 @ns.route('/<string:codigo>/administrativo')
 class Administrativo(Resource):
     def get(self, codigo):

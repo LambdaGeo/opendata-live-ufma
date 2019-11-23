@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/home/sergio/.local/share/virtualenvs/api-dadosabertos-ufma-VApxZk0a/bin/python",
+    "python.pythonPath": "/home/sergio/.local/share/virtualenvs/ufma-live-api-Kj_OkAW4/bin/python",
     "python.linting.pylintEnabled": false,
     "python.linting.enabled": true,
     "python.linting.flake8Enabled": true

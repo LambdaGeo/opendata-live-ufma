@@ -1,7 +1,5 @@
-
 from flask_restplus import Resource
-from api.restplus import api as liveapi
-from api.unidade.serializer import unidades_field
+from restplus import api as liveapi
 from ufma_scrapper import curso
 
 
@@ -14,25 +12,19 @@ class Curso(Resource):
         return curso.get_cursos()
 
 
-
 @ns.route('/<string:codigo>/monografias/<string:ano>')
-## Endpoint - Monografias
-# 16822859
 class Monografias(Resource):
     def get(self, codigo, ano):
         return curso.get_monografias(codigo, ano)
 
-## Endpoint - Discentes Ativos do Curso
-# 16822859
+
 @ns.route('/<string:codigo>/discentes')
 class Discentes(Resource):
     def get(self, codigo):
         return curso.get_discentes_ativos(codigo)
 
+
 @ns.route('/<string:codigo>/turmas/<string:ano>/<string:periodo>')
-## Endpoint - Monografias
-# 16822859
 class Turmas (Resource):
     def get(self, codigo, ano, periodo):
         return curso.get_turmas(codigo, ano, periodo)
-
