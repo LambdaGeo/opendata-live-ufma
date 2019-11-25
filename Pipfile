@@ -12,6 +12,7 @@ flask-restful = "*"
 flask_restplus = "*"
 flask-cors = "*"
 ufma-scrapper = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.7"
