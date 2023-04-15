@@ -1,8 +1,8 @@
 
 ## Uso
 
-    $ pipenv install
     $ pipenv shell
+    $ pipenv install
     $ python app.py
 
 testando ...

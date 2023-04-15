@@ -8,11 +8,11 @@ flake8 = "*"
 
 [packages]
 flask = "*"
-flask-restful = "*"
-flask_restplus = "*"
 flask-cors = "*"
 ufma-scrapper = "*"
 gunicorn = "*"
-
-[requires]
-python_version = "3.7"
+werkzeug = "==0.16.1"
+flask-restful = "==0.3.7"
+flask-restplus = "==0.13.0"
+jinja2 = "==2.10.3"
+markupsafe = "==1.1.1"

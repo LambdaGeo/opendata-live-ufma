@@ -7,7 +7,7 @@ from endpoints.docente import ns as docente_namespace
 from endpoints.curso import ns as curso_namespace
 from endpoints.biblioteca import ns as biblioteca_namespace
 import settings
-
+import os
 
 def configure_app(flask_app):
     flask_app.config['SQLALCHEMY_DATABASE_URI'] = settings.SQLALCHEMY_DATABASE_URI
@@ -30,6 +30,7 @@ api.add_namespace(curso_namespace)
 api.add_namespace(biblioteca_namespace)
 
 
+
 app = Flask(__name__)
 configure_app(app)
 
@@ -43,4 +44,7 @@ def index():
 
 
 if __name__ == '__main__': 
-    app.run(debug=True)
+    if os.environ.get('PORT') is not None:
+        app.run(debug=True, host='0.0.0.0', port=os.environ.get('PORT'))
+    else:
+        app.run(debug=True, host='0.0.0.0') 
